@@ -11,7 +11,7 @@ from frontend.components.skill_validation import display_skill_validation
 from frontend.components.jd_comparison import display_jd_comparison
 from frontend.components.detailed_feedback import display_detailed_feedback
 from frontend.components.action_items import display_action_items
-from ATS_SCORER.frontend.components.recommendation import display_recommendations
+from frontend.components.recommendation import display_recommendations
 
 #Passes the analysis dictionary to smaller display components each responsible for one section
 def display_results_dashboard(analysis: Dict[str, Any]) -> None:

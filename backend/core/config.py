@@ -2,11 +2,14 @@
 import os
 from pathlib import Path
 
-# Load environment varaibles from .env file if it exists upon startup 
-try: 
+# Load environment variables from backend/.env
+try:
     from dotenv import load_dotenv
-    load_dotenv()
-except ImportError: 
+
+    BACKEND_DIR = Path(__file__).resolve().parents[1]
+    load_dotenv(BACKEND_DIR / ".env")
+
+except ImportError:
     pass
 
 BASE_DIR = Path(__file__).resolve().parent

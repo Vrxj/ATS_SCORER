@@ -87,7 +87,7 @@ async def analyse_resume(
 
     #Full Analysis Pipeline 
     try: 
-        from ATS_SCORER.backend.services.resume_analyser import analyse_full_resume
+        from backend.services.resume_analyser import analyse_full_resume
 
         #calling function from resume_anlyser file
         result = analyse_full_resume(
