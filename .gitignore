@@ -12,3 +12,6 @@ __pycache__/
 # Virtual environments
 venv/
 .venv/
+
+# Secrets and credentials
+secrets.toml
