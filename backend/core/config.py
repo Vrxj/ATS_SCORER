@@ -21,9 +21,8 @@ APP_VERSION = '1.0.0'
 APP_DESCRIPTION = 'anlayse resumes against job descriptions using nlp + ml'
 
 ALLOWED_ORIGINS = [
-    "http://localhost:5173", #Vite dev server (REACT)
-    "http://localhost:3000", #Create React App fallback 
-    "http://127.0.0.1:5173", 
+    "https://atsscorer-vraj.streamlit.app/"
+
 ]
 
 #file size declaration 
@@ -40,7 +39,10 @@ SUPPPORTED_MIME_TYPES = {
 SUPPORTED_FILE_EXTENSION = {'.pdf', '.doc', '.docx'}
 
 #Model declaration  
-SPACY_MODEL_PRIMARY = "en_core_web_md" #better accuracy 
+SPACY_MODEL_PRIMARY = os.getenv(
+    "SPACY_MODEL",
+    "en_core_web_md"
+)
 SPACY_MODEL_SECONDARY = "en_core_web_sm" #faster but less accurate and fallback model 
 SENTENCE_TRANSFORMER_MODEL = os.getenv(
     "SENTENCE_TRANSFORMER_MODEL",
@@ -59,5 +61,4 @@ JD_SEMENATIC_WEIGHT = 0.4 # Weight for job description semantic similarity
 SUPABASE_URL       = os.getenv('SUPABASE_URL', '')
 SUPABASE_KEY       = os.getenv('SUPABASE_KEY', '')          # service_role — DB writes (bypasses RLS)
 SUPABASE_ANON_KEY  = os.getenv('SUPABASE_ANON_KEY', '')     # public anon — frontend auth calls
-SUPABASE_JWT_SECRET= os.getenv('SUPABASE_JWT_SECRET', '')   # used by backend to verify access tokens
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
